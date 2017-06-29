@@ -1,6 +1,13 @@
 {
   "Unit Tests": {
     "coverage": {
+      "/Users/mikeheft/turing/mod1/projects/jungle_beat/lib/linked_list.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
       "/Users/mikeheft/turing/mod1/projects/jungle_beat/lib/node.rb": [
         1,
         1,
@@ -12,6 +19,6 @@
         null
       ]
     },
-    "timestamp": 1498775720
+    "timestamp": 1498775947
   }
 }
