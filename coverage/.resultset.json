@@ -1,0 +1,17 @@
+{
+  "Unit Tests": {
+    "coverage": {
+      "/Users/mikeheft/turing/mod1/projects/jungle_beat/lib/node.rb": [
+        1,
+        1,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1498775632
+  }
+}
