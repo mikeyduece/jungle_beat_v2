@@ -26,5 +26,15 @@ class LinkedListTest < Minitest::Test
     assert_nil list.head.next_node.next_node.next_node
   end
 
+  def test_it_can_count
+    list.append("doop")
+    assert_equal "doop", list.head.data
+    assert_equal 1, list.count
+    list.append("wha")
+    list.append("huh")
+    list.append("pop")
+    assert_equal 4, list.count
+  end
+
 
 end
