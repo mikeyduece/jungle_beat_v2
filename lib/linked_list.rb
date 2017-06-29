@@ -11,13 +11,26 @@ class LinkedList
     if head.nil?
       @head = Node.new(sound)
     else
-      current_node = @head
-      until current_node.next_node == nil
-        current_node = current_node.next_node
-      end
-      current_node.next_node = Node.new(sound)
+      traverse_nodes(sound)
+      # current_node = @head
+      # until current_node.next_node == nil
+      #   current_node = current_node.next_node
+      # end
+      # current_node.next_node = Node.new(sound)
     end
     sound
+  end
+
+  def count
+    count = 0
+  end
+
+  def traverse_nodes(sound)
+    current_node = @head
+    until current_node.next_node == nil
+      current_node = current_node.next_node
+    end
+    current_node.next_node = Node.new(sound)
   end
 
 end
