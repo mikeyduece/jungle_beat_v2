@@ -36,5 +36,10 @@ class LinkedListTest < Minitest::Test
     assert_equal 4, list.count
   end
 
+  def test_it_can_generate_strings_of_sounds
+    list.append("doop")
+    assert_equal "doop", list.to_string
+  end
+
 
 end

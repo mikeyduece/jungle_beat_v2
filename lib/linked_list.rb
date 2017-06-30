@@ -30,7 +30,11 @@ class LinkedList
     count
   end
 
-  
+  def to_string
+    "doop"
+  end
+
+
 
 end
 
