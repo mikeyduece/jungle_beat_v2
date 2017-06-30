@@ -54,5 +54,21 @@ class LinkedListTest < Minitest::Test
     assert_equal "dop plop suu", list.to_string
   end
 
+  def test_it_can_prepend_more_than_once
+    list.append("plop")
+    assert_equal "plop", list.to_string
+    list.append("suu")
+    assert_equal "plop suu", list.to_string
+    list.prepend("dop")
+    assert_equal "dop", list.head.data
+    assert_equal "dop plop suu", list.to_string
+    list.prepend("deep")
+    list.head.data
+    assert_equal "deep dop plop suu", list.to_string
+    list.prepend("woo")
+    list.head.data
+    assert_equal "woo deep dop plop suu", list.to_string
+  end
+
 
 end
