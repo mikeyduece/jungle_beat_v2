@@ -38,9 +38,20 @@ class LinkedListTest < Minitest::Test
 
   def test_it_can_generate_strings_of_sounds
     list.append("doop")
+    assert_equal "doop", list.to_string
     list.append("deep")
     assert_equal "doop deep", list.to_string
     assert_equal 2, list.count
+  end
+
+  def test_can_it_prepend
+    list.append("plop")
+    assert_equal "plop", list.to_string
+    list.append("suu")
+    assert_equal "plop suu", list.to_string
+    list.prepend("dop")
+    assert_equal "dop", list.head.data
+    assert_equal "dop plop suu", list.to_string
   end
 
 

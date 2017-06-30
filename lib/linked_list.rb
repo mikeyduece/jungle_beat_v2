@@ -33,13 +33,20 @@ class LinkedList
   def to_string
     sounds = ""
     current_node = @head
+    sounds << current_node.data + " "
     until current_node.next_node == nil
-      sounds << current_node.data + " "
-      sounds << current_node.next_node.data + " "
       current_node = current_node.next_node
+      sounds << current_node.data + " "
     end
     sounds.chop
   end
+
+  def prepend(sound)
+    temp = @head
+    @head = Node.new(sound)
+    @head.next_node = temp
+  end
+
 
 
 
