@@ -31,7 +31,14 @@ class LinkedList
   end
 
   def to_string
-    "doop"
+    sounds = ""
+    current_node = @head
+    until current_node.next_node == nil
+      sounds << current_node.data + " "
+      sounds << current_node.next_node.data + " "
+      current_node = current_node.next_node
+    end
+    sounds.chop
   end
 
 
