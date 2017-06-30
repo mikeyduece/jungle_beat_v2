@@ -93,7 +93,8 @@ class LinkedListTest < Minitest::Test
     list.append("shi")
     list.append("shu")
     list.append("blop")
-    assert list.includes?("blop")
+    assert list.includes?("shi")
+    refute list.includes?("deep")
   end
 
 

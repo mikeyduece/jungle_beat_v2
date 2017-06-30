@@ -4,8 +4,7 @@ class LinkedList
   attr_reader :head
 
   def intialize
-    @head    = nil
-    @include = false
+    @head = nil
   end
 
   def append(sound)
@@ -22,17 +21,17 @@ class LinkedList
   end
 
   def count
-    count = 0
+    count   = 0
     pointer = @head
     while pointer != nil
       pointer = pointer.next_node
-      count += 1
+      count  += 1
     end
     count
   end
 
   def to_string
-    sounds = ""
+    sounds       = ""
     current_node = @head
     sounds << current_node.data + " "
     until current_node.next_node == nil
@@ -49,27 +48,30 @@ class LinkedList
   end
 
   def find(index,amt)
-    current = @head
+    current_node = @head
     count   = 0
     until count == index
-      current = current.next_node
-      count += 1
+      current_node = current_node.next_node
+      count  += 1
     end
     sounds = ""
     amt.times do
-      sounds << current.data + " "
-      current = current.next_node
+      sounds << current_node.data + " "
+      current_node = current_node.next_node
     end
     sounds.chop
   end
 
   def includes?(sound)
-    current = @head
-    until current.data == sound
-      @include
-      current = current.next_node
+    current_node = @head
+    until current_node.data == sound
+      current_node = current_node.next_node
+      if current_node.data == sound
+        return true
+      else
+        return false
+      end
     end
-    return true if current.data == sound
   end
 
 
