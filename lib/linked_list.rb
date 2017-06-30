@@ -57,6 +57,7 @@ class LinkedList
     sounds = ""
     amt.times do
       sounds << current.data + " "
+      current = current.next_node
     end
     sounds.chop
   end
