@@ -34,11 +34,33 @@ class LinkedListTest < Minitest::Test
   end
 
   def test_it_can_count
+    list.append("doop")
+    assert_equal 1, list.count
+  end
 
+  def test_it_can_count_more
+    list.append("doop")
+    list.append("woo")
+    assert_equal 2, list.count
+    list.append("shi")
+    list.append("shu")
+    list.append("neva")
+    assert_equal 5, list.count
+  end
+
+  def test_it_can_grab_string_of_data
+    list.append("doop")
+    assert_equal "doop", list.to_string
+  end
+
+  def test_it_can_grab_more_than_one_sound
+    list.append("doop")
+    list.append("woo")
+    list.append("shi")
+    assert_equal 3, list.count
+    assert_equal "doop woo shi", list.to_string
   end
 end
 
-# > list.count
-# => 1
 # > list.to_string
 # => "doop"
