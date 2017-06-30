@@ -60,7 +60,41 @@ class LinkedListTest < Minitest::Test
     assert_equal 3, list.count
     assert_equal "doop woo shi", list.to_string
   end
-end
 
+  def test_it_can_prepend_sounds
+    list.append("plop")
+    list.append("suu")
+    list.prepend("dop")
+    assert_equal "dop plop suu", list.to_string
+    assert_equal 3, list.count
+  end
+
+  def test_it_can_prepend_more
+    list.append("plop")
+    list.append("suu")
+    list.prepend("dop")
+    assert_equal "dop plop suu", list.to_string
+    assert_equal 3, list.count
+    list.prepend("wha")
+    assert_equal "wha dop plop suu", list.to_string
+    assert_equal 4, list.count
+  end
+end
+# > require "./lib/linked_list"
+# > list = LinkedList.new
+# > list.append("plop")
+# => "plop"
 # > list.to_string
-# => "doop"
+# => "plop"
+# > list.append("suu")
+# => "suu"
+# > list.prepend("dop")
+# => "dop"
+# > list.to_string
+# => "dop plop suu"
+# > list.count
+# => 3
+# > list.insert(1, "woo")
+# => "woo"
+# list.to_string
+# => "dop woo plop suu"

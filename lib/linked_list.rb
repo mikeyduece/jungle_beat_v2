@@ -41,4 +41,11 @@ class LinkedList
     found_sounds.chop
   end
 
+  def prepend(sound)
+    temp  = @head
+    new_node = Node.new(sound)
+    @head = new_node
+    new_node.next_node = temp
+  end
+
 end
