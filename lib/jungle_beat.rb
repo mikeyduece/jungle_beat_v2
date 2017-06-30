@@ -19,6 +19,6 @@ class JungleBeat
 
   def play
     beats = list.to_string
-    `say -r 500 -v Boing #{beats}`
+    `say -r 300 -v Ralph #{beats}`
   end
 end

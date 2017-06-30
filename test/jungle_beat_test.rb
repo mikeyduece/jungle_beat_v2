@@ -39,8 +39,8 @@ class JungleBeatTest < Minitest::Test
   end
 
   def test_it_can_play_beats
-    jb.append("deep doo ditt woo hoo shu")
-    assert_equal 6, jb.count
+    jb.append("never gonna give you up")
+    assert_equal 5, jb.count
     jb.play
   end
 
