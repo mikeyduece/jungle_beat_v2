@@ -64,14 +64,14 @@ class LinkedList
 
   def includes?(sound)
     current_node = @head
-    until current_node.data == sound
-      current_node = current_node.next_node
+    until current_node == nil
       if current_node.data == sound
         return true
       else
-        return false
+        current_node = current_node.next_node
       end
     end
+    return false
   end
 
 
