@@ -21,7 +21,7 @@ class LinkedList
   end
 
   def count
-    count = 0
+    count   = 0
     pointer = @head
     until pointer == nil
       pointer = pointer.next_node
@@ -50,7 +50,7 @@ class LinkedList
   def find(position,amount)
     found_sounds = ""
     count        = 0
-    current = @head
+    current      = @head
     position.times do
       current = current.next_node
     end
@@ -64,9 +64,32 @@ class LinkedList
   def includes?(sound)
     current = @head
     until current.nil?
+      if current.data == sound
+        return true
+      else
+        current = current.next_node
+      end
+    end
+    return false
+  end
+
+  def insert(position,sound)
+    current = @head
+    count   = 0
+    position.times do
       current = current.next_node
     end
-    
+    new_node           = Node.new(sound)
+    new_node.next_node = current.next_node
+    current.next_node  = new_node
+  end
+
+  def pop
+    current = @head
+    until current.next_node.next_node == nil
+      current = current.next_node
+    end
+    current.next_node = nil
   end
 
 end

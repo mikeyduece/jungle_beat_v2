@@ -98,7 +98,6 @@ class LinkedListTest < Minitest::Test
   end
 
   def test_it_can_insert_sounds
-    skip
     list.append("doop")
     list.append("woo")
     list.append("shi")
@@ -111,6 +110,19 @@ class LinkedListTest < Minitest::Test
     list.insert(3,"huh")
     assert_equal "huh", list.head.next_node.next_node.next_node.next_node.data
     assert_equal 7, list.count
+  end
+
+  def test_it_can_pop
+    list.append("doop")
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
+    assert_equal 5, list.count
+    list.pop
+    assert_equal 4, list.count
+    list.pop
+    assert_equal 3, list.count
   end
 
 
