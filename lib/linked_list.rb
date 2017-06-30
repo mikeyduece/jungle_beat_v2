@@ -74,6 +74,18 @@ class LinkedList
     return false
   end
 
+  def insert(position, sound)
+    current_node = @head
+    count        = 0
+    until count == position
+      current_node = current_node.next_node
+      count  += 1
+    end
+    new_node = Node.new(sound)
+    new_node.next_node = current_node.next_node
+    current_node.next_node = new_node
+  end
+
 
 
 

@@ -97,5 +97,17 @@ class LinkedListTest < Minitest::Test
     refute list.includes?("deep")
   end
 
+  def test_it_can_insert_sounds
+    list.append("doop")
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
+    assert_equal 5, list.count
+    list.insert(1, "wha")
+    assert_equal "wha", list.head.next_node.next_node.data
+    assert_equal 6, list.count
+  end
+
 
 end
