@@ -25,16 +25,25 @@ class JungleBeatTest < Minitest::Test
   end
 
   def test_it_can_tell_what_the_head_data_is
-    skip
     jb.append("deep doo ditt")
     assert_equal "deep", jb.list.head.data
+    assert_equal "doo", jb.list.head.next_node.data
+    assert_equal "ditt", jb.list.head.next_node.next_node.data
+    assert_equal 3, jb.count
   end
+
+  def test_it_can_add_more
+    jb.append("deep doo ditt")
+    jb.append("woo hoo shu")
+    assert_equal 6, jb.count
+  end
+
+  def test_it_can_play_beats
+    jb.append("deep doo ditt woo hoo shu")
+    assert_equal 6, jb.count
+    jb.play
+  end
+
 end
-# > jb.list.head.data
-# => "deep"
-# > jb.list.head.next_node.data
-# => "doo"
-# > jb.append("woo hoo shu")
-# => "woo hoo shu"
-# > jb.count
-# 6
+# > jb.play
+# => # plays the sounds deep doo ditt woo hoo shu
