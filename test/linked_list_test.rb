@@ -98,6 +98,7 @@ class LinkedListTest < Minitest::Test
   end
 
   def test_it_can_insert_sounds
+    skip
     list.append("doop")
     list.append("woo")
     list.append("shi")

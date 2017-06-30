@@ -8,92 +8,65 @@ class LinkedList
   end
 
   def append(sound)
-    if head.nil?
+    if @head.nil?
       @head = Node.new(sound)
     else
-      current_node = @head
-      until current_node.next_node == nil
-        current_node = current_node.next_node
+      current = @head
+      until current.next_node == nil
+        current = current.next_node
       end
-      current_node.next_node = Node.new(sound)
+      current.next_node = Node.new(sound)
     end
     sound
   end
 
   def count
-    count   = 0
+    count = 0
     pointer = @head
-    while pointer != nil
+    until pointer == nil
       pointer = pointer.next_node
-      count  += 1
+      count += 1
     end
     count
   end
 
   def to_string
-    sounds       = ""
-    current_node = @head
-    sounds << current_node.data + " "
-    until current_node.next_node == nil
-      current_node = current_node.next_node
-      sounds << current_node.data + " "
+    sounds  = ""
+    current = @head
+    sounds << current.data + " "
+    until current.next_node == nil
+      current = current.next_node
+      sounds << current.data + " "
     end
     sounds.chop
   end
 
   def prepend(sound)
-    temp  = @head
-    @head = Node.new(sound)
+    temp            = @head
+    @head           = Node.new(sound)
     @head.next_node = temp
   end
 
-  def find(index,amt)
-    current_node = @head
-    count   = 0
-    until count == index
-      current_node = current_node.next_node
-      count  += 1
+  def find(position,amount)
+    found_sounds = ""
+    count        = 0
+    current = @head
+    position.times do
+      current = current.next_node
     end
-    sounds = ""
-    amt.times do
-      sounds << current_node.data + " "
-      current_node = current_node.next_node
+    amount.times do
+      found_sounds << current.data + " "
+      current = current.next_node
     end
-    sounds.chop
+    found_sounds.chop
   end
 
   def includes?(sound)
-    current_node = @head
-    until current_node == nil
-      if current_node.data == sound
-        return true
-      else
-        current_node = current_node.next_node
-      end
+    current = @head
+    until current.nil?
+      current = current.next_node
     end
-    return false
-  end
-
-  def insert(position, sound)
-    current_node = @head
-    count        = 0
-    until count == position
-      current_node = current_node.next_node
-      count  += 1
-    end
-    new_node = Node.new(sound)
-    new_node.next_node = current_node.next_node
-    current_node.next_node = new_node
     
   end
 
-
-
-
 end
-
-
-
-
-# > list.to_string
-# => "doop"
