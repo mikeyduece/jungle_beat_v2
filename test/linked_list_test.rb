@@ -107,6 +107,9 @@ class LinkedListTest < Minitest::Test
     list.insert(1, "wha")
     assert_equal "wha", list.head.next_node.next_node.data
     assert_equal 6, list.count
+    list.insert(3,"huh")
+    assert_equal "huh", list.head.next_node.next_node.next_node.next_node.data
+    assert_equal 7, list.count
   end
 
 

@@ -84,6 +84,7 @@ class LinkedList
     new_node = Node.new(sound)
     new_node.next_node = current_node.next_node
     current_node.next_node = new_node
+    
   end
 
 
