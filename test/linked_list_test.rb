@@ -87,5 +87,14 @@ class LinkedListTest < Minitest::Test
     assert_equal "woo shi shu", list.find(1, 3)
   end
 
+  def test_it_can_tell_if_list_includes_data
+    list.append("doop")
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
+    assert list.includes?("blop")
+  end
+
 
 end

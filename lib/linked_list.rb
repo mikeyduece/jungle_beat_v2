@@ -4,7 +4,8 @@ class LinkedList
   attr_reader :head
 
   def intialize
-    @head = nil
+    @head    = nil
+    @include = false
   end
 
   def append(sound)
@@ -60,6 +61,15 @@ class LinkedList
       current = current.next_node
     end
     sounds.chop
+  end
+
+  def includes?(sound)
+    current = @head
+    until current.data == sound
+      @include
+      current = current.next_node
+    end
+    return true if current.data == sound
   end
 
 
