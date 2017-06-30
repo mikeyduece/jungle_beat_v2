@@ -42,9 +42,23 @@ class LinkedList
   end
 
   def prepend(sound)
-    temp = @head
+    temp  = @head
     @head = Node.new(sound)
     @head.next_node = temp
+  end
+
+  def find(index,amt)
+    current = @head
+    count   = 0
+    until count == index
+      current = current.next_node
+      count += 1
+    end
+    sounds = ""
+    amt.times do
+      sounds << current.data + " "
+    end
+    sounds.chop
   end
 
 

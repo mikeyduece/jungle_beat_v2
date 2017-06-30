@@ -70,5 +70,13 @@ class LinkedListTest < Minitest::Test
     assert_equal "woo deep dop plop suu", list.to_string
   end
 
+  def test_it_can_find_one
+    list.append("doop")
+    list.append("deep")
+    list.append("shi")
+    list.append("suu")
+    assert_equal "shi", list.find(2,1)
+  end
+
 
 end
