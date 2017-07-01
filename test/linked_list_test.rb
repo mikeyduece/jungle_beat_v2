@@ -99,4 +99,32 @@ class LinkedListTest < Minitest::Test
     list.insert(2, "huh")
     assert_equal "dop woo huh plop suu", list.to_string
   end
+
+  def test_it_can_find
+    list.append("deep")
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
+    assert_equal "shi", list.find(2, 1)
+  end
+
+  def test_it_can_find_others
+    list.append("deep")
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
+    assert_equal "woo shi shu", list.find(1, 3)
+  end
 end
+# > list.includes?("deep")
+# => true
+# > list.includes?("dep")
+# => false
+# > list.pop
+# => "blop"
+# > list.pop
+# => "shu"
+# > list.to_string
+# => "deep woo shi"

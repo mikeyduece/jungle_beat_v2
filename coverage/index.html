@@ -14,7 +14,7 @@
       <img src="./assets/0.10.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-06-30T18:08:46-06:00">2017-06-30T18:08:46-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-06-30T18:17:19-06:00">2017-06-30T18:17:19-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         8.44
+         8.92
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>2</b> files in total.
-    <b>46</b> relevant lines. 
-    <span class="green"><b>46</b> lines covered</span> and
+    <b>55</b> relevant lines. 
+    <span class="green"><b>55</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -53,11 +53,11 @@
       <tr>
         <td class="strong"><a href="#8b9eaae8242400d5125ffae60274e13e1184e499" class="src_link" title="lib/linked_list.rb">lib/linked_list.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>61</td>
-        <td>40</td>
-        <td>40</td>
+        <td>74</td>
+        <td>49</td>
+        <td>49</td>
         <td>0</td>
-        <td>8.1</td>
+        <td>8.3</td>
       </tr>
       
       <tr>
@@ -67,7 +67,7 @@
         <td>6</td>
         <td>6</td>
         <td>0</td>
-        <td>10.7</td>
+        <td>14.0</td>
       </tr>
       
     </tbody>
@@ -91,8 +91,8 @@
     <h3>lib/linked_list.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>40</b> relevant lines. 
-      <span class="green"><b>40</b> lines covered</span> and
+      <b>49</b> relevant lines. 
+      <span class="green"><b>49</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -136,8 +136,8 @@
           <code class="ruby">  def initialize</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="7">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="15" data-linenumber="7">
+          <span class="hits">15</span>
           
           <code class="ruby">    @head = nil</code>
         </li>
@@ -160,14 +160,14 @@
           <code class="ruby">  def append(sound)</code>
         </li>
       
-        <li class="covered" data-hits="24" data-linenumber="11">
-          <span class="hits">24</span>
+        <li class="covered" data-hits="34" data-linenumber="11">
+          <span class="hits">34</span>
           
           <code class="ruby">    if @head.nil?</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="12">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="13" data-linenumber="12">
+          <span class="hits">13</span>
           
           <code class="ruby">      @head = Node.new(sound)</code>
         </li>
@@ -178,20 +178,20 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="14">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="21" data-linenumber="14">
+          <span class="hits">21</span>
           
           <code class="ruby">      current = @head</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="15">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="21" data-linenumber="15">
+          <span class="hits">21</span>
           
           <code class="ruby">      until current.next_node.nil?</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="16">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="21" data-linenumber="16">
+          <span class="hits">21</span>
           
           <code class="ruby">        current = current.next_node</code>
         </li>
@@ -202,8 +202,8 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="18">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="21" data-linenumber="18">
+          <span class="hits">21</span>
           
           <code class="ruby">      current.next_node = Node.new(sound)</code>
         </li>
@@ -214,8 +214,8 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="24" data-linenumber="20">
-          <span class="hits">24</span>
+        <li class="covered" data-hits="34" data-linenumber="20">
+          <span class="hits">34</span>
           
           <code class="ruby">    sound</code>
         </li>
@@ -460,7 +460,85 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
+        <li class="covered" data-hits="1" data-linenumber="61">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def find(position,amount)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="62">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    current      = @head</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="63">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    found_sounds = &quot;&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="64">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    position.times do</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="65">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      current = current.next_node</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="66">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="67">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    amount.times do</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="68">
+          <span class="hits">4</span>
+          
+          <code class="ruby">      found_sounds &lt;&lt; current.data + &quot; &quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="69">
+          <span class="hits">4</span>
+          
+          <code class="ruby">      current = current.next_node</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="71">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    found_sounds.chop</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="72">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="73">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="74">
           
           
           <code class="ruby">end</code>
@@ -515,14 +593,14 @@
           <code class="ruby">  def initialize(data,next_node=nil)</code>
         </li>
       
-        <li class="covered" data-hits="30" data-linenumber="6">
-          <span class="hits">30</span>
+        <li class="covered" data-hits="40" data-linenumber="6">
+          <span class="hits">40</span>
           
           <code class="ruby">    @data      = data</code>
         </li>
       
-        <li class="covered" data-hits="30" data-linenumber="7">
-          <span class="hits">30</span>
+        <li class="covered" data-hits="40" data-linenumber="7">
+          <span class="hits">40</span>
           
           <code class="ruby">    @next_node = next_node</code>
         </li>

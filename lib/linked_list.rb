@@ -58,4 +58,17 @@ class LinkedList
     current.next_node  = new_node
   end
 
+  def find(position,amount)
+    current      = @head
+    found_sounds = ""
+    position.times do
+      current = current.next_node
+    end
+    amount.times do
+      found_sounds << current.data + " "
+      current = current.next_node
+    end
+    found_sounds.chop
+  end
+
 end
