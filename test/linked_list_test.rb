@@ -45,6 +45,7 @@ class LinkedListTest < Minitest::Test
     list.append("shi")
     list.append("shu")
     list.append("neva")
+    require "pry"; binding.pry
     assert_equal 5, list.count
   end
 
@@ -134,9 +135,26 @@ class LinkedListTest < Minitest::Test
     list.append("shi")
     list.append("shu")
     list.append("blop")
+    assert_equal "deep woo shi shu blop", list.to_string
     assert_equal 5, list.count
     assert_equal "blop", list.pop
+    assert_equal "deep woo shi shu", list.to_string
     assert_equal 4, list.count
+  end
+
+  def test_it_can_pop_more
+    list.append("deep")
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
+    assert_equal 5, list.count
+    assert_equal "blop", list.pop
+    assert_equal "deep woo shi shu", list.to_string
+    assert_equal 4, list.count
+    assert_equal "shu", list.pop
+    assert_equal "deep woo shi", list.to_string
+    assert_equal 3, list.count
   end
 end
 # > list.pop
