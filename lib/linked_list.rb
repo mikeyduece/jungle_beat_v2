@@ -71,4 +71,18 @@ class LinkedList
     found_sounds.chop
   end
 
+  def includes?(sound)
+    current = @head
+    until current.nil?
+      if current.data == sound
+        return true
+      else
+        current = current.next_node
+      end
+      return false
+    end
+  end
+
+  
+
 end
